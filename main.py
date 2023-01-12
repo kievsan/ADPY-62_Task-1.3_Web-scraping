@@ -61,6 +61,7 @@ if __name__ == '__main__':
 
         for keyword in KEYWORDS:
             if (keyword in preview_text) or (keyword in full_text):
+                article_info['text'] = full_text
                 result_articles.append(article_info)
                 print('\t',  # <дата> - <заголовок> - <ссылка>
                       article_info['datetime_string'].split(',', 1)[0], '-',
@@ -70,6 +71,3 @@ if __name__ == '__main__':
                 break
 
     print(f'\nНайдено {len(result_articles)} подходящих статей')
-
-
-
